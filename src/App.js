@@ -1,13 +1,11 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {fetchAccounts} from './actions/fetchAccounts'
 
 class App extends React.Component{
 
   componentDidMount() {
-    fetch('http://localhost:3000/api/v1/accounts') 
-    .then(response => response.json())
-    .then(data => console.log(data))
-
-
+    this.props.fetchAccounts({type: 'FETCH_ACCOUNTS', payload: {name: 'Checking'}} )
   }
 
 
@@ -21,4 +19,7 @@ class App extends React.Component{
   };
 };
 
-export default App;
+export default connect(null, {fetchAccounts})(App);
+
+//mapStateToProps gives us access to the store 
+//mapDispatchToProps gives us the ability to dispatch new actions from component 
