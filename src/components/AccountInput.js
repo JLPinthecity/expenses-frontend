@@ -9,4 +9,6 @@ class AccountInput extends React.Component {
             </div>
         )
     }
-}
+} 
+
+export default AccountInput;
