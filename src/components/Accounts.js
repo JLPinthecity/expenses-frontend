@@ -1,10 +1,10 @@
 import React from 'react'
 
-const Accounts = (props) => {
+const Accounts = ({accounts}) => {
 
     return (
         <div>
-            Accounts
+            {accounts.map(account => <li>{account.name} = {account.balance} </li>)}
         </div>
     )
 }
