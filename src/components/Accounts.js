@@ -4,7 +4,7 @@ const Accounts = (props) => {
 
     return (
         <div>
-
+            Accounts
         </div>
     )
 }
