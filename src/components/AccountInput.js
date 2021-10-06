@@ -16,10 +16,9 @@ class AccountInput extends React.Component {
 
     //it's in brackets, to evaluate whether it's name or balance and sets it as the key
 
-
     handleSubmit = (event) => {
         event.preventDefault();
-        this.props.createAccount()
+        this.props.createAccount(this.state);
     }
 
     render() {
