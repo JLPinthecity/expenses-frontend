@@ -1,4 +1,6 @@
-import React from 'react'
+import React from 'react';
+import { connect } from 'react-redux';
+import { createAccount } from '../actions/createAccount';
 
 class AccountInput extends React.Component {
     state = {
@@ -14,10 +16,16 @@ class AccountInput extends React.Component {
 
     //it's in brackets, to evaluate whether it's name or balance and sets it as the key
 
+
+    handleSubmit = (event) => {
+        event.preventDefault();
+        this.props.createAccount()
+    }
+
     render() {
         return (
             <div>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>Checking Account Name</label>
                     <input type="text" placeholder="name" name="name" value={this.state.name} onChange={this.handleChange}/><br></br>
 
@@ -31,4 +39,4 @@ class AccountInput extends React.Component {
     }
 } 
 
-export default AccountInput;
+export default connect(null, { createAccount })(AccountInput);
