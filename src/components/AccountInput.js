@@ -19,6 +19,10 @@ class AccountInput extends React.Component {
     handleSubmit = (event) => {
         event.preventDefault();
         this.props.createAccount(this.state);
+        this.setState({
+            name: '',
+            balance: ''
+        })
     }
 
     render() {
