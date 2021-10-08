@@ -1,13 +1,16 @@
 import React from 'react'
+import { Redirect } from 'react-router-dom';
 
 const Account = (props) => {
-    console.log(props)
 
     let account = props.accounts[props.match.params.id - 1]
 
+    console.log(account)
+
     return (
         <li>
-            {account.name} - {account.balance}
+            {account ? null : <Redirect to="/accounts"/>} 
+            {account ? account.name : null} - {account ? account.balance : null}
         </li>
     )
 
