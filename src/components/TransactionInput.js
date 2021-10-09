@@ -13,6 +13,11 @@ class TransactionInput extends React.Component {
         })
     }
 
+    handleSubmit = (event) => {
+
+    
+    }
+
     render() {
         return (
             <div>
