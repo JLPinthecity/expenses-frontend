@@ -5,10 +5,11 @@ import Transactions from '../components/Transactions';
 class TransactionsContainer extends React.Component {
 
     render(){
+        
         return (
             <div>
-                <Transactions/>
                 <TransactionInput/>
+                <Transactions transactions={this.props.account && this.props.account.transactions}/>
             </div>
         )
     }

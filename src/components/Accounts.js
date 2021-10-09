@@ -1,6 +1,5 @@
 import React from 'react';
-import Account from './Account';
-import { Route, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const Accounts = (props) => {
 
