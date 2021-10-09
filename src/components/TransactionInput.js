@@ -2,6 +2,10 @@ import React from 'react';
 import {connect} from 'react-redux'
 
 class TransactionInput extends React.Component {
+    state = {
+        kind: '',
+        amount: ''
+    }
 
     render() {
         return (
