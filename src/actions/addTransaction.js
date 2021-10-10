@@ -9,6 +9,9 @@ export const addTransaction = (transaction, accountId) => {
             body: JSON.stringify(transaction)
         })
         .then(resp => resp.json())
-        .then(transaction => dispatch({type: 'ADD_TRANSACTION', payload: transaction}))
+        .then(account => dispatch({type: 'ADD_TRANSACTION', payload: account}))
     }
 }
+
+//we are sending back the whole account that the transaction is associated with..
+//to avoid having to find the account and then updating the account's transactions

@@ -1,5 +1,6 @@
 import React from 'react';
-import {connect} from 'react-redux'
+import {connect} from 'react-redux';
+import { addTransaction } from '../actions/addTransaction';
 
 class TransactionInput extends React.Component {
     state = {
@@ -14,7 +15,12 @@ class TransactionInput extends React.Component {
     }
 
     handleSubmit = (event) => {
-
+        event.preventDefault();
+        this.props.addTransaction(this.state, this.props.account.id);
+        this.setState({
+            kind: 'deposit',
+            amount: ''
+        })
     
     }
 
