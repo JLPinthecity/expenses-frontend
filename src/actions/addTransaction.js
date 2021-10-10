@@ -8,6 +8,8 @@ export const addTransaction = (transaction, accountId) => {
             },
             body: JSON.stringify(transaction)
         })
+
+        
         .then(resp => resp.json())
         .then(account => dispatch({type: 'ADD_TRANSACTION', payload: account}))
     }

@@ -9,7 +9,6 @@ class TransactionInput extends React.Component {
         amount: ''
     }
 
-    
     handleChange = (event) => {
         this.setState({
             [event.target.name]: event.target.value
@@ -17,7 +16,6 @@ class TransactionInput extends React.Component {
     }
 
     handleSubmit = (event) => {
-        debugger
         event.preventDefault();
         this.props.addTransaction(this.state, this.props.account.id);
         this.setState({
@@ -49,4 +47,4 @@ class TransactionInput extends React.Component {
     }
 }
 
-export default connect()(TransactionInput);
+export default connect(null, { addTransaction })(TransactionInput);

@@ -1,5 +1,5 @@
 export default function accountReducer(state = {accounts: []}, action) {
-
+    debugger
     switch (action.type) {
         case 'FETCH_ACCOUNTS':
             return  {accounts: action.payload}
@@ -8,12 +8,19 @@ export default function accountReducer(state = {accounts: []}, action) {
             return { ...state, accounts: [...state.accounts, action.payload] }
     
         case 'ADD_TRANSACTION':
-            return {}
+            let accounts = state.accounts.map(account => {
+                if (account.id === action.payload.id) {
+                    return action.payload
+                } else {
+                    return account
+                }
+            })
+
+            return {...state, accounts: accounts}
 
         default:
             return state;
     }
-
 }
 
 //why is it good to always have a default? we want it to return some version of our state
