@@ -1,4 +1,6 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import {deleteTransaction} from '../actions/deleteTransaction' 
 
 const Transactions = (props) => {
 
@@ -15,4 +17,4 @@ const Transactions = (props) => {
     )
 }
 
-export default Transactions
+export default connect(null, {deleteTransaction})(Transactions)
