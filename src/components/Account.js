@@ -1,5 +1,4 @@
 import React from 'react'
-import { Redirect } from 'react-router-dom';
 import TransactionsContainer from '../containers/TransactionsContainer'
 
 const Account = (props) => {
